@@ -1,4 +1,6 @@
 language: php
+php:
+  - 7.2.9
 sudo: required
 dist: trusty
 
@@ -10,7 +12,7 @@ install:
    - travis_retry composer install --no-interaction --prefer-dist --no-suggest
 
 before_script:
-  - mysql -e 'create database faks2018;'
+  - mysql -e 'create database fakultet2018;'
   - composer self-update
   - composer update
   - composer require --dev phpunit/phpunit ^7.0
