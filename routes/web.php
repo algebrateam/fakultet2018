@@ -33,7 +33,7 @@ Route::get('user/{id}', function ($id) {
     return 'User ' . $id;
 });
 
-// Prije  http://example.com/prvi.php?post=prvipost&komentar=5589
+// Prije   http://example.com/prvi.php?post=prvipost&komentar=5589
 // Sada može  http://example.com/posts/prvi/comments/5589/?var1=prvipost&var2=5589
 // ruta sa više adresnim get parametrom
 Route::get('posts/{post}/comments/{comment}', function ($postId, $commentId) {
