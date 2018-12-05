@@ -87,7 +87,7 @@ class ConfigFakultetTest extends TestCase{
     public function testPostavkeServiceProvider()
     {
        // void markTestSkipped(string $message)
-        markTestSkipped('Ovo je zastarjelo u verziji Laravel > 5.5');
+        $this->markTestSkipped('Ovo je zastarjelo u verziji Laravel > 5.5');
          $this->assertTrue(in_array('Collective\Html\HtmlServiceProvider'
                  , config('app.providers'))
                  ,'"Collective\Html\HtmlServiceProvider" postavi u "/config/app.php"');
@@ -101,7 +101,7 @@ class ConfigFakultetTest extends TestCase{
         
     public function testPostavkeCustomAliases()
     {
-       markTestSkipped('Ovo je zastarjelo u verziji Laravel > 5.5');
+       $this->markTestSkipped('Ovo je zastarjelo u verziji Laravel > 5.5');
          $this->assertTrue(in_array('Collective\Html\FormFacade'
                  , config('app.aliases'))
                  ,'"Alias Collective\Html\FormFacade" postavi u "/config/app.php"');
