@@ -20,3 +20,6 @@ Homestead.json
 .rocketeer/
 /nbproject/private/
 /nbproject/
+
+.phpunit.result.cache
+yarn-error.log
