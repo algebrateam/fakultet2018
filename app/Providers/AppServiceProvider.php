@@ -17,7 +17,8 @@ class AppServiceProvider extends ServiceProvider
         /**
          * Migration table created successfully.
          * Migrating: 2014_10_12_000000_create_users_table
-         * PDOException::("SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes")
+         * PDOException::("SQLSTATE[42000]: Syntax error or access violation: 
+         * 1071 Specified key was too long; max key length is 767 bytes")
          */
         Schema::defaultStringLength(191);
     }

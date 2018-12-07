@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['first', 'second'])->group(function () {
+Route::middleware(['root', 'admin'])->group(function () {
 // primjer closure funk
     Route::get('foo', function () {
         return 'Hello World';
@@ -39,3 +39,9 @@ Route::get('user/{id}', function ($id) {
 Route::get('posts/{post}/comments/{comment}', function ($postId, $commentId) {
     return 'Ovo je neki text<br>' . $postId . '<hr>komentar:<br>' . $commentId;
 });
+
+Route::get('/auto/start', 'AutoController@pokreniAuto');
+Route::get('/auto/stop', 'AutoController@zaustaviAuto');
+Route::get('/auto/bojaj/{boja}', 'AutoController@obojajAuto');
+
+Route::resource('mobitels','MobitelController');
