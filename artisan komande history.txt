@@ -1,0 +1,59 @@
+cd ~/Code/
+ls
+git clone https://github.com/algebrateam/fakultet2018.git
+git add .
+cd fakultet2018/
+git add .
+git commit -am "dodan netbeans projekt"
+git status
+composer
+cd ~/Code/fakultet2018/
+php --v
+php -v
+composer global require laravel/installer
+cd ..
+clear
+laravel new fakultet
+cd fakultet2018/
+ls
+git add .
+git commit -am "Laravel project init v 5.7.16"
+git push
+git config credential.helper store
+php artisan serve
+php artisan key:generate --show
+php artisan key:generate
+ls -la
+cd bootstrap/
+ls -la
+chmod 777 cache
+ls -la
+sudo chmod -R 777 cache
+chmod -R 777 cache/
+php artisan
+php artisan route:list
+composer dumpautoload
+composer update
+php artisan clear-compiled
+php artisan cache:clear
+composer du
+php artisan
+php artisan make:controller AutoController
+php artisan route:list
+php artisan make:controller MobitelController --resource --model=Mobitel
+php artisan make:migration mobs --create mobs
+php artisan make:migration gobs --table gobs
+php artisan migrate
+php artisan migrate:rollback
+php artisan migrate
+php artisan make:model Mobitel --migration
+php artisan migrate:refresh
+php artisan route:list
+composer du
+git add .
+git commit -am "dodana migracija model i kontroller za mobitel"
+git push
+git pull
+git push
+php artisan make:model Mobitel --migration
+
