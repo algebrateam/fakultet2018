@@ -1,14 +1,16 @@
 @extends('master')
 
 @section('title', 'Mobitel detalji')
-
+{{-- linkovi za mobitel --}}
 @section('sidebar')
     @parent
 
     <p>Ovo su linkovi za mobitel:</p>
-    <a href="/mobitels">Svi mobiteli</a>
+    
     
 @endsection
+
+{{-- This comment will not be present in the rendered HTML --}}
 
 @section('content')
     <p>Detalji mobitela:</p>

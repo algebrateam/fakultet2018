@@ -12,7 +12,8 @@ and open the template in the editor.
     </head>
     <body>
          @section('sidebar')
-            This is the master sidebar.
+            <a href="/mobitels">Svi mobiteli</a>
+            <a href="/mobitels/create">Dodaj novi mobitel</a>
         @show
         <div class="container">
             @yield('content')

@@ -45,3 +45,4 @@ Route::get('/auto/stop', 'AutoController@zaustaviAuto');
 Route::get('/auto/bojaj/{boja}', 'AutoController@obojajAuto');
 
 Route::resource('mobitels','MobitelController');
+Route::get('/mobitels/all', 'MobitelController@svi_mobiteli');

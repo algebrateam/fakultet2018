@@ -6,6 +6,11 @@ use App\Mobitel;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\View\View;
+
 
 class MobitelController extends Controller {
 
@@ -27,9 +32,20 @@ class MobitelController extends Controller {
     /**
      * Display a listing of the resource.
      *
+     * @return View mobitel.index
+     */
+    public function index(){
+                $mobs = Mobitel::all();
+                //dd($mobs);
+                return view('mobitel.index',['mobitels'=>$mobs]);
+    }
+    
+    /**
+     * Display a listing of the resource.
+     *
      * @return Response
      */
-    public function index() {
+    public function svi_mobiteli() {
         $mobs = DB::select('select * from mobitels where id > ?', [2]);
         var_dump($mobs);
         echo '<br>Odabrani mobitel: ' . $mobs[1]->producer . ' ' . $mobs[1]->price;
@@ -75,7 +91,7 @@ class MobitelController extends Controller {
      * @return Response
      */
     public function create() {
-        //
+        return view('mobitel.create');
     }
 
     /**
@@ -85,7 +101,42 @@ class MobitelController extends Controller {
      * @return Response
      */
     public function store(Request $request) {
-        //
+        //dd($request);
+        //return "mobitel store";
+        $validator = Validator::make($request->all(), [
+             "producer" => "required|string|max:191",
+      "model" => "required|string|max:191",
+      "screen" => "numeric|digits_between:1,2",
+      "price" => "required|numeric|digits_between:1,4",
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('mobitels/create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }      
+        else {
+            // store
+            $mobitel = new Mobitel;
+            $mobitel->producer=Input::get('producer');
+            $mobitel->model = Input::get('model');
+            $mobitel->screen=Input::get('screen');
+            $mobitel->price = Input::get('price');           
+            $mobitel->save();
+            // redirect
+            Session::flash('message', 'Uspješno dodan mobitel!');
+            //return Redirect::to('mobitels');
+            return redirect()->route('mobitels.index');
+        }
+          
+          // validate
+        // read more on validation at http://laravel.com/docs/validation
+
+        
+        
+        
+        
+        
     }
 
     /**
@@ -103,7 +154,7 @@ class MobitelController extends Controller {
         
         
         //  vraća view sa mobitelima
-        return view('mobitels.show', ['mobitel' => $mobitel]);
+        return view('mobitel.show', ['mobitel' => $mobitel]);
     }
 
     /**
