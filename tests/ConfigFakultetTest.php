@@ -34,9 +34,15 @@ class ConfigFakultetTest extends TestCase{
     }
     public function testAppKeyPostavljen()
     {
-      //Config::get('app.key')  moze i ovako
-        $this->assertNotEmpty($_ENV['APP_KEY']
-                ,'Kljuc nije generiran. Pokreni "php artisan key:generate"');
+      //Dohvaćanje konfiguracijske varijable:
+      //Config::get('app.key')    // static metoda
+      //config('app.key')         // preporucena metoda putem config()
+      //$_ENV['APP_KEY']          // direktno putem globalne varijable
+      
+      
+ //       $this->assertNotEmpty($_ENV['APP_KEY']
+ //               ,'Kljuc nije generiran. Pokreni "php artisan key:generate"');
+        $this->assertNotEmpty(config('app.key'),'Kljuc nije generiran. Pokreni "php artisan key:generate"');
         
         $this->assertEquals ("base64"
                 ,substr($_ENV['APP_KEY'], 0, 6)
