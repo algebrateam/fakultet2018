@@ -25,10 +25,10 @@
     
     <li> <a href="{{url("/mobitels/{$m->id}")}}"> {{$m->producer }}</a>
 <a href="{{url("/mobitels/{$m->id}/edit")}}"><span class="label label-info">Edit</span></a>
-<form action='{{url("/mobitels/{$m->id}")}}' method='POST'>
+<form action='{{url("/mobitels/{$m->id}")}}' method='POST' style="display: inline">
 @csrf
 <input type='hidden' name='_method' value='DELETE'>
-<input type='submit' name='delete_mob' value='delete' class="btn btn-warning">
+<button type='submit' name='delete_mob' value='delete' class="btn btn-warning"> delete</button>
 </form>
 </li>
     
