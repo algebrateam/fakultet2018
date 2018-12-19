@@ -1,4 +1,4 @@
-@extends('master')
+﻿@extends('master')
 
 @section('title', 'Mobitel detalji')
 {{-- linkovi za mobitel --}}
@@ -23,7 +23,14 @@
     
     {{-- <li> <a href="/mobitels/{{$m->id}}"> {{$m->producer }}</a></li> --}}
     
-    <li> <a href="{{url("/mobitels/{$m->id}")}}"> {{$m->producer }}</a></li>
+    <li> <a href="{{url("/mobitels/{$m->id}")}}"> {{$m->producer }}</a>
+<a href="{{url("/mobitels/{$m->id}/edit")}}"><span class="label label-info">Edit</span></a>
+<form action='{{url("/mobitels/{$m->id}")}}' method='POST'>
+@csrf
+<input type='hidden' name='_method' value='DELETE'>
+<input type='submit' name='delete_mob' value='delete' class="btn btn-warning">
+</form>
+</li>
     
     @endforeach
 </ul>

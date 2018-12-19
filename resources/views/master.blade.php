@@ -21,6 +21,19 @@ and open the template in the editor.
             <a href="/mobitels">Svi mobiteli</a>
             <a href="/mobitels/create">Dodaj novi mobitel</a>
         @show
+        <!-- will be used to show any messages -->
+@if (Session::has('message'))
+	<div class="alert alert-info">{{ Session::get('message') }}</div>
+@endif
+
+@if(!empty($errors->first()))
+
+        <div class="alert alert-danger">
+            <span>{{ $errors->first() }}</span>
+        </div>
+  
+@endif
+
         <div class="container">
             @yield('content')
         </div>

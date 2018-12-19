@@ -100,6 +100,7 @@ class MobitelController extends Controller {
      * @return Response
      */
     public function store(Request $request) {
+        // dd($request);
         $validator = Validator::make($request->all(), [
               "producer" => "required|string|max:191",
               "model" => "required|string|max:191",
@@ -108,6 +109,7 @@ class MobitelController extends Controller {
         ]);
 
         if ($validator->fails()) {
+            Session::flash('error', 'Greška!');
             return redirect('mobitels/create')
                     ->withErrors($validator)
                     ->withInput();
@@ -151,7 +153,7 @@ class MobitelController extends Controller {
      * @return Response
      */
     public function edit(Mobitel $mobitel) {
-        //
+        return view('mobitel.edit', ['mobitel' => $mobitel]);
     }
 
     /**
@@ -162,7 +164,32 @@ class MobitelController extends Controller {
      * @return Response
      */
     public function update(Request $request, Mobitel $mobitel) {
-        //
+         $validator = Validator::make($request->all(), [
+              "producer" => "required|string|max:191",
+              "model" => "required|string|max:191",
+              "screen" => "numeric|between:0.0,9.9",  //"numeric|digits_between:1,2",
+              "price" => "required|numeric|between:0.00,9999.99"   // digits_between:1,4",
+        ]);
+//dd($request);
+        if ($validator->fails()) {
+            Session::flash('error', 'Greška prošlo kroz kontroller!');
+            return redirect('mobitels/'.$mobitel->id.'/edit')
+                    ->withErrors($validator)
+                    ->withInput();
+        } else {
+            // store
+            //$mobitel = new Mobitel;
+            $mobitel->producer = $request->input('producer');
+            $mobitel->model = $request->input('model');
+            $mobitel->screen = $request->input('screen');
+            $mobitel->price = $request->input('price');
+            $mobitel->save();
+            // redirect
+            Session::flash('message', 'Uspješno izmjenjen mobitel!');
+            //return Redirect::to('mobitels');
+            return redirect()->route('mobitels.index');
+        }
+
     }
 
     /**
@@ -172,7 +199,9 @@ class MobitelController extends Controller {
      * @return Response
      */
     public function destroy(Mobitel $mobitel) {
-        //
+        $mobitel->delete();
+        Session::flash('message', 'Mobitel obrisan!');
+        return redirect()->route('mobitels.index');
     }
 
 }
