@@ -21,10 +21,10 @@
 <ul>
     @foreach ($mobitels as $m)
     
-    {{-- <li> <a href="/mobitels/{{$m->id}}"> {{$m->producer }}</a></li> --}}
+    <!-- <li> <a href="/mobitels/{{$m->id}}"> {{$m->producer }}</a></li> -->
     
-    <li> <a href="{{url("/mobitels/{$m->id}")}}"> {{$m->producer }}</a>
-<a href="{{url("/mobitels/{$m->id}/edit")}}"><span class="label label-info">Edit</span></a>
+    <li> <a href='{{url("/mobitels/{$m->id}")}}'> {{$m->producer }}</a>
+<a href='{{url("/mobitels/{$m->id}/edit")}}'><span class="label label-info">Edit</span></a>
 <form action='{{url("/mobitels/{$m->id}")}}' method='POST' style="display: inline">
 @csrf
 <input type='hidden' name='_method' value='DELETE'>
