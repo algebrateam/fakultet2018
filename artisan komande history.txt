@@ -62,6 +62,61 @@ php artisan tinker
 factory(Trgovina::class,50)->create();
 
 ### Kreiranje pivot tablice mobitel-trgovina
-$ php artisan make:migration create_mobitel_trgovina_table --create=mobitel_trgovina
+$ php artisan make:migration create_mobitel_trgovina_pivot --create=mobitel_trgovina
 Created Migration: 2018_12_21_181219_create_mobitel_trgovina_table
+
+
+################
+php artisan tinker    #pokrecemo tinker
+$m=new Mobitel;       #postavljamo varijablu $m na model Mobitel
+$m::all();            #izlistavamo sve mobitele
+$m->find(2)           #dohvaćamo mobitel sa id=2
+$m->find(2)->trgovine()->get();  # dohvaćamo sve trgovine koje imaju mobitel sa id=2
+# iz prethodnog query filtriramo tgovinu sa id=3 i dohvaćamo ime drzave
+$m->find(2)->trgovine()->get()->find(3)->drzava; 
+=> "Bhutan"
+
+
+#######
+Preko trgovine do mobitela
+
+>>> $t= new Trgovina;
+[!] Aliasing 'Trgovina' to 'App\Trgovina' for this Tinker session.
+=> App\Trgovina {#2937}
+>>> $t->find(3)->mobiteli()->get();
+[!] Aliasing 'Mobitel' to 'App\Mobitel' for this Tinker session.
+=> Illuminate\Database\Eloquent\Collection {#2944
+     all: [
+       App\Mobitel {#2940
+         id: 2,
+         producer: "Apple",
+         model: "wewe",
+         screen: "2.00",
+         price: "2.00",
+         created_at: null,
+         updated_at: null,
+         pivot: Illuminate\Database\Eloquent\Relations\Pivot {#135
+           trgovina_id: 3,
+           mobitel_id: 2,
+         },
+       },
+     ],
+   }
+
+>>> $t->find(3)->mobiteli()->get()->first();
+=> App\Mobitel {#2942
+     id: 2,
+     producer: "Apple",
+     model: "wewe",
+     screen: "2.00",
+     price: "2.00",
+     created_at: null,
+     updated_at: null,
+     pivot: Illuminate\Database\Eloquent\Relations\Pivot {#2936
+       trgovina_id: 3,
+       mobitel_id: 2,
+     },
+   }
+>>> $t->find(3)->mobiteli()->get()->first()->producer;
+=> "Apple"
 

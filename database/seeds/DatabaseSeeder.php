@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $this->call(TrgovinaTableSeeder::class);
         $this->call(MobitelTableSeeder::class);
+        $this->call(MobitelTrgovinaPivotSeeder::class);       
         
     }
 }

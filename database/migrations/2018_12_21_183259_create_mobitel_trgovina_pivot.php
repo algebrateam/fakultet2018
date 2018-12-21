@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMobitelTrgovinaTable extends Migration
+class CreateMobitelTrgovinaPivot extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,8 @@ class CreateMobitelTrgovinaTable extends Migration
     {
         Schema::create('mobitel_trgovina', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('mobitel_id')->unsigned();
+            $table->integer('trgovina_id')->unsigned();
         });
     }
 
