@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Gobs extends Migration
+class CreateMobitelTrgovinaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class Gobs extends Migration
      */
     public function up()
     {
-        //$ php artisan make:migration gobs --table gobs
-
-        Schema::create('gobs', function (Blueprint $table) {
+        Schema::create('mobitel_trgovina', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ime')->unique();
             $table->timestamps();
         });
     }
@@ -29,7 +26,6 @@ class Gobs extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gobs');
-        
+        Schema::dropIfExists('mobitel_trgovina');
     }
 }

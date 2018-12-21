@@ -57,3 +57,11 @@ git pull
 git push
 php artisan make:model Mobitel --migration
 
+################
+php artisan tinker
+factory(Trgovina::class,50)->create();
+
+### Kreiranje pivot tablice mobitel-trgovina
+$ php artisan make:migration create_mobitel_trgovina_table --create=mobitel_trgovina
+Created Migration: 2018_12_21_181219_create_mobitel_trgovina_table
+

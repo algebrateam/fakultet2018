@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Mobs extends Migration
+class CreateTrgovinasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class Mobs extends Migration
      */
     public function up()
     {
-        //$ php artisan make:migration mobs --create mobs
-
-        Schema::create('mobs', function (Blueprint $table) {
+        Schema::create('trgovinas', function (Blueprint $table) {           
             $table->increments('id');
+            $table->string('name');
+            $table->string('drzava');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class Mobs extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mobs');
+        Schema::dropIfExists('trgovinas');
     }
 }
