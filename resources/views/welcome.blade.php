@@ -83,7 +83,11 @@
                 <div class="title m-b-md">
                     Dobrodošli na aplikaciju Fakultet 
                 </div>
-
+                <div>
+                    <a href="/trgovine">Trgovine</a><br>
+                    <a href="/mobitels">Mobiteli</a><br>
+                </div>
+                <hr>
                 <div class="links">
                     <a href="/foo">Foo</a>
                     <a href="https://laravel.com/docs">Documentation</a>
