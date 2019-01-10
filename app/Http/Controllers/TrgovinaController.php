@@ -112,7 +112,7 @@ class TrgovinaController extends Controller {
               "drzava" => "required|string|max:191"
         ]);
         if ($validator->fails()) {
-            Session::flash('error', 'Greška prošlo kroz kontroller!');
+            Session::flash('error', 'Greška, molim ispravno popuniti polja!');
             return redirect('trgovine/'.$trgovine->id.'/edit')
                     ->withErrors($validator)
                     ->withInput();
@@ -134,7 +134,9 @@ class TrgovinaController extends Controller {
      * @return Response
      */
     public function destroy(Trgovina $trgovine) {
-        //
+        $trgovine->delete();
+        Session::flash('warning', 'Trgovina obrisana!');
+        return redirect()->route('trgovine.index');
     }
 
 }

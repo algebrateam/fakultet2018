@@ -6,7 +6,9 @@
 @stop
 
 @section('content')
-    
+ @if (Session::has('error'))
+	<div class="alert alert-error">{{ Session::get('error') }}</div>
+@endif   
     <form method="POST" action="/trgovine/{{$trgovine->id}}">  
         <input type="hidden" name="_method" value="PUT">
         @csrf
@@ -14,7 +16,7 @@
             <label for="id"> id:</label>
             {{$trgovine->id}}<br>
             <label for="name"> *name:</label>
-        <input maxlength="191" type="text" name="name" required="true"
+        <input maxlength="191" type="text" name="name" required="true" 
                value="{{ $trgovine->name }}"><br>
         <label for="drzava"> *drzava:</label>
          <input maxlength="191" type="text" name="drzava" required="true"

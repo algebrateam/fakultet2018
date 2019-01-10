@@ -64,3 +64,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::view('/adminlte_template', 'adminlte_template');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+

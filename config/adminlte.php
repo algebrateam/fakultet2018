@@ -1,8 +1,7 @@
 <?php
 
 return [
-
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Title
     |--------------------------------------------------------------------------
@@ -11,15 +10,12 @@ return [
     | of your page. You can override it per page with the title section.
     | You can optionally also specify a title prefix and/or postfix.
     |
-    */
+   */
 
-    'title' => 'AdminLTE 2',
-
-    'title_prefix' => '',
-
-    'title_postfix' => '',
-
-    /*
+  'title' => 'AdminLTE 2',
+  'title_prefix' => '',
+  'title_postfix' => '',
+  /*
     |--------------------------------------------------------------------------
     | Logo
     |--------------------------------------------------------------------------
@@ -28,13 +24,10 @@ return [
     | You can use basic HTML here if you want. The logo has also a mini
     | variant, used for the mini side bar. Make it 3 letters or so
     |
-    */
-
-    'logo' => '<b>Admin</b>LTE',
-
-    'logo_mini' => '<b>A</b>LT',
-
-    /*
+   */
+  'logo' => '<b>Admin</b>LTE',
+  'logo_mini' => '<b>A</b>LT',
+  /*
     |--------------------------------------------------------------------------
     | Skin Color
     |--------------------------------------------------------------------------
@@ -43,11 +36,9 @@ return [
     | blue, black, purple, yellow, red, and green. Each skin also has a
     | ligth variant: blue-light, purple-light, purple-light, etc.
     |
-    */
-
-    'skin' => 'blue',
-
-    /*
+   */
+  'skin' => 'blue',
+  /*
     |--------------------------------------------------------------------------
     | Layout
     |--------------------------------------------------------------------------
@@ -56,11 +47,9 @@ return [
     | null, 'boxed', 'fixed', 'top-nav'. null is the default, top-nav
     | removes the sidebar and places your menu in the top navbar
     |
-    */
-
-    'layout' => null,
-
-    /*
+   */
+  'layout' => null,
+  /*
     |--------------------------------------------------------------------------
     | Collapse Sidebar
     |--------------------------------------------------------------------------
@@ -69,11 +58,9 @@ return [
     | bar. To adjust your sidebar layout simply set this  either true
     | this is compatible with layouts except top-nav layout option
     |
-    */
-
-    'collapse_sidebar' => false,
-
-    /*
+   */
+  'collapse_sidebar' => false,
+  /*
     |--------------------------------------------------------------------------
     | URLs
     |--------------------------------------------------------------------------
@@ -83,19 +70,13 @@ return [
     | You can set the request to a GET or POST with logout_method.
     | Set register_url to null if you don't want a register link.
     |
-    */
-
-    'dashboard_url' => 'home',
-
-    'logout_url' => 'logout',
-
-    'logout_method' => null,
-
-    'login_url' => 'login',
-
-    'register_url' => 'register',
-
-    /*
+   */
+  'dashboard_url' => 'home',
+  'logout_url' => 'logout',
+  'logout_method' => null,
+  'login_url' => 'login',
+  'register_url' => 'register',
+  /*
     |--------------------------------------------------------------------------
     | Menu Items
     |--------------------------------------------------------------------------
@@ -105,94 +86,121 @@ return [
     | Font Awesome. A string instead of an array represents a header in sidebar
     | layout. The 'can' is a filter on Laravel's built in Gate functionality.
     |
-    */
-
-    'menu' => [
-        'MAIN NAVIGATION',
-        [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'Trgovine',
-            'url'         => 'trgovine',
-            'icon'        => 'file',
-            'label'       => 14,
-            'label_color' => 'success',
-        ],
-      [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        'ACCOUNT SETTINGS',
-        [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
-        ],
-        [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
-        ],
-        [
-            'text'    => 'Multilevel',
-            'icon'    => 'share',
-            'submenu' => [
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'Level One',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Level Two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Level Two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        'LABELS',
-        [
-            'text'       => 'Important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
-        ],
+   */
+  'menu' => [
+    'MAIN NAVIGATION',
+    [
+      'text' => 'Blog',
+      'url' => 'admin/blog',
+      'can' => 'manage-blog',
     ],
-
-    /*
+    [
+      'text' => 'Trgovina',
+      'icon' => 'share',
+      'submenu' => [
+        [
+          'text' => 'Sve trgovine',
+          'url' => 'trgovine',
+          'icon' => 'file',
+          'label' => 14,
+          'label_color' => 'success',
+        ],
+        [
+          'text' => 'Nova trgovina',
+          'url' => 'trgovine/create',
+          'icon' => 'file',
+        ],
+      ],
+    ],
+        [
+      'text' => 'Mobitel',
+      'icon' => 'share',
+      'submenu' => [
+        [
+          'text' => 'Svi mobiteli',
+          'url' => 'mobitels',
+          'icon' => 'file',
+          'label' => 14,
+          'label_color' => 'success',
+        ],
+        [
+          'text' => 'Novi mobitel',
+          'url' => 'mobitels/create',
+          'icon' => 'file',
+        ],
+      ],
+    ],
+    [
+      'text' => 'Pages',
+      'url' => 'admin/pages',
+      'icon' => 'file',
+      'label' => 4,
+      'label_color' => 'success',
+    ],
+    'ACCOUNT SETTINGS',
+    [
+      'text' => 'Profile',
+      'url' => 'admin/settings',
+      'icon' => 'user',
+    ],
+    [
+      'text' => 'Change Password',
+      'url' => 'admin/settings',
+      'icon' => 'lock',
+    ],
+    [
+      'text' => 'Multilevel',
+      'icon' => 'share',
+      'submenu' => [
+        [
+          'text' => 'Level One',
+          'url' => '#',
+        ],
+        [
+          'text' => 'Level One',
+          'url' => '#',
+          'submenu' => [
+            [
+              'text' => 'Level Two',
+              'url' => '#',
+            ],
+            [
+              'text' => 'Level Two',
+              'url' => '#',
+              'submenu' => [
+                [
+                  'text' => 'Level Three',
+                  'url' => '#',
+                ],
+                [
+                  'text' => 'Level Three',
+                  'url' => '#',
+                ],
+              ],
+            ],
+          ],
+        ],
+        [
+          'text' => 'Level One',
+          'url' => '#',
+        ],
+      ],
+    ],
+    'LABELS',
+    [
+      'text' => 'Important',
+      'icon_color' => 'red',
+    ],
+    [
+      'text' => 'Warning',
+      'icon_color' => 'yellow',
+    ],
+    [
+      'text' => 'Information',
+      'icon_color' => 'aqua',
+    ],
+  ],
+  /*
     |--------------------------------------------------------------------------
     | Menu Filters
     |--------------------------------------------------------------------------
@@ -202,17 +210,15 @@ return [
     | You can comment out the GateFilter if you don't want to use Laravel's
     | built in Gate functionality
     |
-    */
-
-    'filters' => [
-        JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\SubmenuFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
-    ],
-
-    /*
+   */
+  'filters' => [
+    JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
+    JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
+    JeroenNoten\LaravelAdminLte\Menu\Filters\SubmenuFilter::class,
+    JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
+    JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
+  ],
+  /*
     |--------------------------------------------------------------------------
     | Plugins Initialization
     |--------------------------------------------------------------------------
@@ -221,11 +227,10 @@ return [
     | only DataTables is supported as a plugin. Set the value to true
     | to include the JavaScript file from a CDN via a script tag.
     |
-    */
-
-    'plugins' => [
-        'datatables' => true,
-        'select2'    => true,
-        'chartjs'    => true,
-    ],
+   */
+  'plugins' => [
+    'datatables' => true,
+    'select2' => true,
+    'chartjs' => true,
+  ],
 ];
