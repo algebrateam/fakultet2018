@@ -1,4 +1,4 @@
-@extends('master')
+@extends('adminlte::page')
 
 @section('title', 'Mobitel detalji')
 {{-- linkovi za mobitel --}}
@@ -13,7 +13,9 @@
 @endsection
 
 {{-- This comment will not be present in the rendered HTML --}}
-
+@section('content_header')
+    <h1>Trgovine</h1>
+@stop
 @section('content')
     <p>Detalji trgovine:</p>
     <h3>Hello, {{ $trgovine->name }}.</h3>
@@ -27,3 +29,10 @@
     </ol>
 @endsection
 
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop

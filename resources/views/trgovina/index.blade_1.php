@@ -1,15 +1,23 @@
-@extends('adminlte::page')
+﻿@extends('master')
 
 @section('title', 'Sve trgovine')
+{{-- linkovi za mobitel --}}
+@section('sidebar')
+@parent
+
+<p>Ovo su linkovi za mobitel:</p>
+<a href="/mobitels">Svi mobiteli</a>
+
+@endsection
 
 {{-- This comment will not be present in the rendered HTML --}}
 
-@section('content_header')
-    <h1>Trgovine</h1>
-@stop
 @section('content')
-<a href='{{url("/trgovine/create")}}'><span class="label label-success">Nova trgovina</span></a>
-<hr>
+
+<?php
+//dd($mobit);
+?>
+<h3>Lista trgovina:</h3>
 <ul>
     @foreach ($trgovine as $t)
     
@@ -30,10 +38,3 @@
 
 @endsection
 
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
-@stop

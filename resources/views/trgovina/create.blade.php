@@ -1,44 +1,32 @@
-@extends('master')
+@extends('adminlte::page')
 
-@section('title', 'Mobitel detalji')
-{{-- linkovi za mobitel --}}
-@section('sidebar')
-    @parent
-
-    <p>Ovo su linkovi za mobitel:</p>
-    <a href="/mobitels">Svi mobiteli</a>
-    
-@endsection
-
-{{-- This comment will not be present in the rendered HTML --}}
-
+@section('title', 'Dodaj novu trgovinu')
+@section('content_header')
+<h1>Dodaj novu trgovinu</h1>
+@stop
 @section('content')
 
+<form method="POST" action="/trgovine">  
+    @csrf
+    <div class="form-group">
+        <label for="name"> *name:</label>
+        <input maxlength="191" type="text" name="name" required="true"
+               value="{{ old('name') }}"><br>
+        <label for="drzava"> *drzava:</label>
+        <input maxlength="191" type="text" name="drzava" required="true"
+               value="{{ old('drzava') }}"><br>
+    </div>
+    <div class="form-group">
+        <input type="submit" name="trgovina_sbm" value="Dodaj novu trgovinu">
+    </div>
+</form>    
 
-    <h3>Novi mobitel</h3>
-    
-    <form method="POST" action="/mobitels">  
-        @csrf
-        <div class="form-group">
-            <label for="producer"> *producer:</label>
-        <input maxlength="191" type="text" name="producer" required="true"
-               value="{{ old('producer') }}"><br>
-        <label for="model"> *model:</label>
-         <input maxlength="191" type="text" name="model"
-                value="{{ old('model') }}"><br>
-         <label for="screen"> *screen:</label>
-         <input min="1" max="9" type="number" name="screen"
-                value="{{ old('screen') }}"><br>
-         <label for="price"> *price:</label>
-         <input max="9999" min="0" type="number" name="price" required="true"
-                value="{{ old('price') }}"><br>
-        </div>
-        <div class="form-group">
-        <input type="submit" name="novi_mob_sbm" value="Dodaj novi mobitel">
-        </div>
-    </form>    
 
-    
-    
 @endsection
+@section('css')
+<link rel="stylesheet" href="/css/admin_custom.css">
+@stop
 
+@section('js')
+<script> console.log('Hi!');</script>
+@stop

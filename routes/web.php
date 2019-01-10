@@ -59,3 +59,8 @@ Route::get('/trgovina/{trgovina_id}/mobiteli',function ($trgovina_id) {
     }
     
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::view('/adminlte_template', 'adminlte_template');

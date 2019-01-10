@@ -120,3 +120,7 @@ Preko trgovine do mobitela
 >>> $t->find(3)->mobiteli()->get()->first()->producer;
 => "Apple"
 
+///////////////
+$mobiteli=Trgovina::find(1)->mobiteli()->orderby('producer')->get();
+
+

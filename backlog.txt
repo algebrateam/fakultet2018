@@ -1,0 +1,9 @@
+1. dodati administracijski panel sa navigacijom -> DONe  pmrvic@123.com:123456  username:pass
+2. dodati autorizaciju
+3. nastaviti s dodavanjem modela
+4. dusk testiranje
+5. phpunit testiranje
+6. production
+
+
+

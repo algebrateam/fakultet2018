@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Trgovina;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\View\View;
 
 class TrgovinaController extends Controller {
 
@@ -42,7 +47,7 @@ class TrgovinaController extends Controller {
      * @return Response
      */
     public function create() {
-        // TODO napravi view formu za unos nove trgovine
+       return view('trgovina.create');  
     }
 
     /**
@@ -52,7 +57,25 @@ class TrgovinaController extends Controller {
      * @return Response
      */
     public function store(Request $request) {
-        // TODO popuni proceduru za kreiranje nove trgovine
+ $validator = Validator::make($request->all(), [
+              "name" => "required|string|max:191",
+              "drzava" => "required|string|max:191"
+        ]);
+        if ($validator->fails()) {
+            Session::flash('error', 'Greška prošlo kroz kontroller!');
+            return redirect('trgovine/create')
+                    ->withErrors($validator)
+                    ->withInput();
+        } else {
+            // store
+            $trgovine = new Trgovina;
+            $trgovine->name = $request->input('name');
+            $trgovine->drzava = $request->input('drzava');
+            $trgovine->save();
+            // redirect
+            Session::flash('message', 'Uspješno dodana trgovina!');
+            return redirect()->route('trgovine.index');
+        }
     }
 
     /**
@@ -73,7 +96,7 @@ class TrgovinaController extends Controller {
      * @return Response
      */
     public function edit(Trgovina $trgovine) {
-        // TODO izmjeni view za trgovinu
+        return view('trgovina.edit', ['trgovine' => $trgovine]);
     }
 
     /**
@@ -84,7 +107,24 @@ class TrgovinaController extends Controller {
      * @return Response
      */
     public function update(Request $request, Trgovina $trgovine) {
-        // TODO izmjeni view EDIT za trgovinu
+ $validator = Validator::make($request->all(), [
+              "name" => "required|string|max:191",
+              "drzava" => "required|string|max:191"
+        ]);
+        if ($validator->fails()) {
+            Session::flash('error', 'Greška prošlo kroz kontroller!');
+            return redirect('trgovine/'.$trgovine->id.'/edit')
+                    ->withErrors($validator)
+                    ->withInput();
+        } else {
+            // store
+            $trgovine->name = $request->input('name');
+            $trgovine->drzava = $request->input('drzava');
+            $trgovine->save();
+            // redirect
+            Session::flash('message', 'Uspješno izmjenjena trgovina!');
+            return redirect()->route('trgovine.index');
+        }
     }
 
     /**

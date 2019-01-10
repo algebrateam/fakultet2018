@@ -70,6 +70,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
+                    pmrvic@123.com : 123456 <br>
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
