@@ -22,9 +22,14 @@ Route::middleware(['root', 'admin'])->group(function () {
         return 'Hello World';
     })->name('profoo');
 
+
+});
 // redirekcija (trenutno vraća 404 not found
     Route::redirect('/here', '/there');
+    Route::get('/there', function () {
+    return 'I am there';
 });
+    
 // ruta vraća view sa parametrom
 Route::view('/studispis', 'studispis', ['name' => 'Marko']);
 
@@ -68,4 +73,6 @@ Route::view('/adminlte_template', 'adminlte_template');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/mobitels/show','MobitelController@show_from_post');
 

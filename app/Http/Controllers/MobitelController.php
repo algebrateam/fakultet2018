@@ -145,6 +145,24 @@ class MobitelController extends Controller {
         //  vraća view sa mobitelima
         return view('mobitel.show', ['mobitel' => $mobitel]);
     }
+    
+        /**
+     * Kada postamo na /mobitels/{mobitel} zelim dobiti detalje mobitela
+     *
+     * http://localhost:8000/mobitels/1
+     * @param  Mobitel  $mobitel
+     * @return Response
+     */
+    public function show_from_post(Mobitel $mobitel) {  // dependancy injection
+        //TODO rijesi test pocetnastranicaTest da bi ovo radilo
+        // vraća sve mobitele
+        // return  $mobitel->all(); 
+        // vraća ispis detalja samo jednog mobitela
+        //return  $mobitel->id.' model je:'.$mobitel->producer.' trenutna cijena je:'.$mobitel->price;
+        //  vraća view sa mobitelima
+        //$response=Mobitel::find(1);  // ovo je greska....
+        return json_decode($mobitel);
+    }
 
     /**
      * Show the form for editing the specified resource.

@@ -13,6 +13,9 @@
 {{-- This comment will not be present in the rendered HTML --}}
 
 @section('content')
+ @if (Session::has('greska'))
+	<div class="alert alert-error">{{ Session::get('greska') }}</div>
+@endif  
     <p>Detalji mobitela:</p>
     <?php
     //dd($mobitel);
