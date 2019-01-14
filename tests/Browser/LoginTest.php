@@ -22,8 +22,9 @@ class LoginTest extends DuskTestCase {
                 ->type('email', 'pmrvic@123.com')
                 ->type('password', '123456')
                 //->press('submit_btn')
-                ->press('Sign In')
-                ->assertSee('You are logged in!')
+                ->press('Sign In');
+            $browser->pause(1500);
+                $browser->assertSee('You are logged in!')
             ->clickLink('Log Out')
             ->assertSee('Dobrodošli na aplikaciju Fakultet');
         });
