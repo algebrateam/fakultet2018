@@ -22,7 +22,7 @@ before_script:
   - php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=assets
   - php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=config  
   - php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=views 
-  - php artisan make:adminlte
+  - php artisan make:adminlte --force
   - mysql -e "use fakultet2018; INSERT INTO fakultet2018.users (name, email, email_verified_at, password, remember_token, created_at, updated_at) VALUES('Predrag Mrvic', 'pmrvic@123.com', NULL, '$2y$10$unv5NFvl89zxAhdy5.cnFOae8S01aoFdO73X..qPECtQV5YCrCPSG', 'qwBUkyVl0n5ykKgUfLy67f1pYZt6JrSzQFCgOo4oUv8XcBVXxPB1susHuvRe', '2019-01-08 19:44:24.0', '2019-01-08 19:44:24.0');"
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
   - php artisan serve &
