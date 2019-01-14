@@ -3,3 +3,6 @@
 
 # fakultet2018
 Projekt fakultet uz pomoć Laravel frameworka
+
+#Pages
+ Your site is published at [fakultet2018](https://algebrateam.github.io/fakultet2018/)
