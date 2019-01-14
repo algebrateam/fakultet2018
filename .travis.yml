@@ -31,3 +31,12 @@ script:
   #- vendor/bin/phpunit --debug --bootstrap vendor/autoload.php tests/
   - vendor/bin/phpunit --debug --bootstrap vendor/autoload.php --configuration ./phpunit.xml
   - php artisan dusk
+  
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local-dir: ./tests/Browser/screenshots
+  github-token: dabdbd939757d36c5067d586f8d1bc7a92db2e67
+  keep-history: true
+  on:
+    branch: gh-pages
