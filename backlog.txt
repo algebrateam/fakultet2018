@@ -2,11 +2,15 @@
 // 2. dodati autorizaciju
 3. nastaviti s dodavanjem modela
 4. browser test:
-  4.1 dusk testiranje
-  4.2. feature testiranje
+  4.1 dusk testiranje    // uz pomoc vanjskog librarya DUSK
+  4.2. feature testiranje // interni laravel mehanizam
 // 5. phpunit testiranje
  5.1 dodaj za svaki model phpunit test
-6. production (ftp server, heroku git server, nesto besplatno, nesto probno?) mora imati podrsku za php 7.1
+6. DUSK test
+ 6.1. napravi dusk test unos novog mobitela i nove trgovine
+ 6.2. dusk test izmjene trgovine
+
+7. production (ftp server, heroku git server, nesto besplatno, nesto probno?) mora imati podrsku za php 7.1
 
 
 
