@@ -4,6 +4,8 @@
 4. browser test:
   4.1 dusk testiranje    // uz pomoc vanjskog librarya DUSK
   4.2. feature testiranje // interni laravel mehanizam
+    4.2.1 registracija novog usera
+    4.2.2 logiranje novog usera  
 // 5. phpunit testiranje
  5.1 dodaj za svaki model phpunit test
 6. DUSK test

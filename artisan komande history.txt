@@ -124,3 +124,22 @@ Preko trgovine do mobitela
 $mobiteli=Trgovina::find(1)->mobiteli()->orderby('producer')->get();
 
 
+///////////////
+
+>>> $us=new User;
+[!] Aliasing 'User' to 'App\User' for this Tinker session.
+=> App\User {#2988}
+>>> $us=User::where('email','test@test.com') -> first();
+=> App\User {#2982
+     id: 3,
+     name: "Testina Testic",
+     email: "test@test.com",
+     email_verified_at: null,
+     created_at: "2019-01-16 17:44:07",
+     updated_at: "2019-01-16 17:44:07",
+   }
+>>> $us->delete();
+=> true
+
+
+
