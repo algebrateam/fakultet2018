@@ -30,6 +30,11 @@
      @endforeach
     </ol>
     
+    @component('components.mob2trg',['m' => $mobitel] )
+    @endcomponent
+    
+    
+    @include('mobitel.footer')
 @endsection
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
