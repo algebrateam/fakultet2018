@@ -1,22 +1,14 @@
-﻿@extends('master')
+@extends('adminlte::page')
 
-@section('title', 'Mobitel detalji')
-{{-- linkovi za mobitel --}}
-@section('sidebar')
-@parent
+@section('title', 'Mobiteli svi')
+@section('content_header')
+    <h1>Mobiteli</h1>
+@stop
 
-<p>Ovo su linkovi za mobitel:</p>
-<a href="/mobitels">Svi mobiteli</a>
-
-@endsection
-
-{{-- This comment will not be present in the rendered HTML --}}
 
 @section('content')
 
-<?php
-//dd($mobit);
-?>
+
 <h3>Lista mobitela:</h3>
 <ul>
     @foreach ($mobitels as $m)
@@ -43,4 +35,12 @@ Model je: {{ $mobitel->model }}, veličina ekrana je {{ $mobitel->screen }}
 
 
 @endsection
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop
 

@@ -2,10 +2,10 @@
 // 2. dodati autorizaciju
 3. nastaviti s dodavanjem modela
 4. browser test:
-  4.1 dusk testiranje    // uz pomoc vanjskog librarya DUSK
-  4.2. feature testiranje // interni laravel mehanizam
-    4.2.1 registracija novog usera //done
-    4.2.2 logiranje novog usera   // done [master 225ddc3] 
+//  4.1 dusk testiranje    // uz pomoc vanjskog librarya DUSK
+//  4.2. feature testiranje // interni laravel mehanizam
+//    4.2.1 registracija novog usera //done
+//    4.2.2 logiranje novog usera   // done [master 225ddc3] 
 // 5. phpunit testiranje
  5.1 dodaj za svaki model phpunit test
 6. DUSK test
@@ -13,6 +13,14 @@
  6.2. dusk test izmjene trgovine
 
 7. production (ftp server, heroku git server, nesto besplatno, nesto probno?) mora imati podrsku za php 7.1
+
+- kada odem na detalje mobitela zelim vidjeti u kojim trgovinama ga mogu kupiti
+// - mobitele dodaj na admin panel
+- prikazi komponentu datatable
+- prikazi blade komponente
+- primje blade include
+- dodaj mobitele u trgovine
+
 
 
 

@@ -1,18 +1,7 @@
 @extends('adminlte::page')
 
 @section('title', 'Mobitel detalji')
-{{-- linkovi za mobitel --}}
-@section('sidebar')
-    @parent
-
-    <p>Ovo su linkovi za mobitel:</p>
-    <?php
-    //dd($trgovine);
-    ?>
     
-@endsection
-
-{{-- This comment will not be present in the rendered HTML --}}
 @section('content_header')
     <h1>Trgovine</h1>
 @stop
@@ -24,7 +13,9 @@
     Lista mobitela:
     <ol>
     @foreach ($mobovi as $m)
-        <li><a href='{{url("/mobitels/{$m->id}")}}'> {{$m->producer}}, {{$m->model}}</a> </li>
+        <li><a href='{{url("/mobitels/{$m->id}")}}'> {{$m->producer}}, {{$m->model}}</a> 
+        <i class="fa fa-mobile" aria-hidden="true"></i>
+        </li>
      @endforeach
     </ol>
 @endsection

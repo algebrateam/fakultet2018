@@ -1,21 +1,13 @@
-@extends('master')
+@extends('adminlte::page')
 
 @section('title', 'Mobitel detalji')
-{{-- linkovi za mobitel --}}
-@section('sidebar')
-    @parent
-
-    <p>Ovo su linkovi za mobitel:</p>
-    <a href="/mobitels">Svi mobiteli</a>
-    
-@endsection
-
-{{-- This comment will not be present in the rendered HTML --}}
-
+@section('content_header')
+    <h1>Detalji mobitela {{ $mobitel->model }}</h1>
+@stop
 @section('content')
 
 
-    <h3>Uredi postojeći mobitel</h3>
+    <strong>Uredi:</strong>
     
     <form method="POST" action="/mobitels/{{$mobitel->id}}">  
         <input type="hidden" name="_method" value="PUT">
@@ -44,4 +36,10 @@
     
     
 @endsection
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
 
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop
