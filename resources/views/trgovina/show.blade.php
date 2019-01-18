@@ -18,6 +18,10 @@
         </li>
      @endforeach
     </ol>
+    
+    <br><br><br>
+    @component('components.datatable')
+    @endcomponent
 @endsection
 
 @section('css')
@@ -26,4 +30,13 @@
 
 @section('js')
     <script> console.log('Hi!'); </script>
+          <script>
+        $(document).ready(function () {
+            $('.data-table').dataTable({
+        "paging":   true,
+        "ordering": false,
+        "info":     false
+    });
+        });
+    </script>  
 @stop
