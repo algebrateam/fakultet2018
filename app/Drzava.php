@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Drzava extends Model
 {
-    //
+    public function trgovine()
+    {
+        return $this->hasMany('App\Trgovina');
+    }
 }

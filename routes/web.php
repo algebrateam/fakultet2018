@@ -52,6 +52,7 @@ Route::get('/auto/bojaj/{boja}', 'AutoController@obojajAuto');
 Route::resource('mobitels','MobitelController');
 Route::get('/mobitels/all', 'MobitelController@svi_mobiteli');
 Route::resource('trgovine','TrgovinaController');
+Route::resource('drzave','DrzavaController');
 
 Route::get('/trgovina/{trgovina_id}/mobiteli',function ($trgovina_id) {
     $mobovi = App\Trgovina::find($trgovina_id)->mobiteli()->orderby('producer')->get();

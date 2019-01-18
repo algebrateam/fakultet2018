@@ -1,0 +1,33 @@
+
+// kreiramo model, controller, resource
+php artisan make:model Drzava -mcr
+
+// stvoreni fileovi
++ app/Drzava.php
++ app/Http/Controllers/DrzavaController.php
++ database/migrations/2019_01_18_175010_create_drzavas_table.php
+
+// kreiramo factory...
+php artisan make:factory DrzavaFactory --model=Drzava
++ database/factories/DrzavaFactory.php
+
+//Kreiramo seeder za Drzavu
+php artisan make:seeder DrzavasTableSeeder
++ database/seeds/DrzavasTableSeeder.php
+
+//popunimo seeder i dodamo ga u DatabaseSeeder.php
+// (database/seeds/DatabaseSeeder.php)
+$this->call(DrzavasTableSeeder::class);
+
+// dodati foreward releciju OneToMany
+// app/Drzava.php
++    public function trgovine()
+    {
+        return $this->hasMany('App\Trgovina');
+    }
+// dodati inverse relaciju  OneToMany
+// app/Trgovina.php
++   public function drzava()
+    {
+        return $this->belongsTo('App\Drzava'); // inverse relation
+    }

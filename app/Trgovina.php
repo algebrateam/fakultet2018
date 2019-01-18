@@ -11,4 +11,8 @@ class Trgovina extends Model
        # php artisan make:migration create_mobitel_trgovina_pivot --create=mobitel_trgovina
         return $this->belongsToMany('App\Mobitel','mobitel_trgovina');
     }
+     public function drzava()
+    {
+        return $this->belongsTo('App\Drzava'); // inverse relation
+    }    
 }

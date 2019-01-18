@@ -16,10 +16,12 @@
 
 - kada odem na detalje mobitela zelim vidjeti u kojim trgovinama ga mogu kupiti
 // - mobitele dodaj na admin panel
-- prikazi komponentu datatable
-- prikazi blade komponente
-- primje blade include
-- dodaj mobitele u trgovine
+// - prikazi komponentu datatable
+// - prikazi blade komponente
+// - primje blade include
+// - dodaj mobitele u trgovine
+- dodaj model Drzava
+- dodaj model Adresa
 
 
 

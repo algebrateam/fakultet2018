@@ -1,5 +1,6 @@
 <?php
 // php artisan make:seeder DrzavasTableSeeder
+// php artisan db:seed --class=UsersTableSeeder
 
 
 use App\Drzava;
