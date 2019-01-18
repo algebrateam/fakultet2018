@@ -41,3 +41,15 @@
   </tbody>
 </table>
     </div>
+@section('js')
+    <script> console.log('Hi!'); </script>
+          <script>
+        $(document).ready(function () {
+            $('.data-table').dataTable({
+        "paging":   true,
+        "ordering": false,
+        "info":     false
+    });
+        });
+    </script>  
+@stop

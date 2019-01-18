@@ -14,7 +14,7 @@ class DrzavaController extends Controller
      */
     public function index()
     {
-        //
+        return view('drzava.index', ['drzave' => Drzava::all()]);
     }
 
     /**
@@ -41,7 +41,7 @@ class DrzavaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Drzava  $drzava
+     * @param  Drzava  $drzava
      * @return \Illuminate\Http\Response
      */
     public function show(Drzava $drzava)
@@ -52,7 +52,7 @@ class DrzavaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Drzava  $drzava
+     * @param  Drzava  $drzava
      * @return \Illuminate\Http\Response
      */
     public function edit(Drzava $drzava)
@@ -64,7 +64,7 @@ class DrzavaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Drzava  $drzava
+     * @param  Drzava  $drzava
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Drzava $drzava)
@@ -75,7 +75,7 @@ class DrzavaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Drzava  $drzava
+     * @param  Drzava  $drzava
      * @return \Illuminate\Http\Response
      */
     public function destroy(Drzava $drzava)
