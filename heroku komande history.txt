@@ -1,0 +1,28 @@
+heroku status
+heroku auth
+heroku auth:login
+heroku auth:whoami
+
+
+# git postavke dodaj remote
+git remote add heroku https://git.heroku.com/fakultet2018.git
+
+# git postavke listaj remote
+Algebra@PowerRyzen MINGW64 ~/Code/fakultet2018 (master)
+$ git remote -v
+heroku  https://git.heroku.com/fakultet2018.git (fetch)
+heroku  https://git.heroku.com/fakultet2018.git (push)
+origin  https://github.com/algebrateam/fakultet2018.git (fetch)
+origin  https://github.com/algebrateam/fakultet2018.git (push)
+
+#direktan push na heroku
+git push heroku master
+
+#izvrsavanje remote command sa konzole:
+Algebra@PowerRyzen MINGW64 ~/Code/fakultet2018 (master)
+$ heroku run php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=assets --force
+Running php artisan vendor:publish --provider=JeroenNoten\LaravelAdminLte\ServiceProvider --tag=assets --force on fakultet2018... starting, run.7555 (Free)
+Running php artisan vendor:publish --provider=JeroenNoten\LaravelAdminLte\ServiceProvider --tag=assets --force on fakultet2018... connecting, run.7555 (Free)
+Running php artisan vendor:publish --provider=JeroenNoten\LaravelAdminLte\ServiceProvider --tag=assets --force on fakultet2018... up, run.7555 (Free)
+Publishing complete.
+
