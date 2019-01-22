@@ -23,6 +23,7 @@
 - dodaj model Drzava
 - dodaj model Adresa
 - dodaj komponentu crud.blade.php kao http://localhost:8000/trgovine
+- deployment na Heroku
 
 
 
