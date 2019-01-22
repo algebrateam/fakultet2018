@@ -12,7 +12,12 @@
  6.1. napravi dusk test unos novog mobitela i nove trgovine
  6.2. dusk test izmjene trgovine
 
-7. production (ftp server, heroku git server, nesto besplatno, nesto probno?) mora imati podrsku za php 7.1
+// 7. production (ftp server, heroku git server, nesto besplatno, nesto probno?) mora imati podrsku za php 7.1
+https://fakultet2018.herokuapp.com/
+https://www.cleardb.com/database/details?id=7674DA812A2A7C6905A3EC97742B23B9
+https://dashboard.heroku.com/apps/fakultet2018
+- TODO osposobi stilove za adminlte
+- TODO napraviti scriptu za heroku adminlte publish
 
 - kada odem na detalje mobitela zelim vidjeti u kojim trgovinama ga mogu kupiti
 // - mobitele dodaj na admin panel
@@ -23,8 +28,8 @@
 - dodaj model Drzava
 - dodaj model Adresa
 - dodaj komponentu crud.blade.php kao http://localhost:8000/trgovine
-- deployment na Heroku
-- dodaj usera 1	Predrag Mrvic	pmrvic@123.com	""	$2y$10$InrA9CXO7Q5Wnxku.YbuGeT277M0W/YL7PQdV2QoNEkIz1DY1Tr7u	N48lhfGg5snSCQnr1UZrixUl0hRzvUtttMl2vtulA7LUhoMptvuMcXPc54Mo	2019-01-22 17:48:16.000	2019-01-22 17:48:16.000
+// - deployment na Heroku
+// - dodaj usera 1	Predrag Mrvic	pmrvic@123.com	""	$2y$10$InrA9CXO7Q5Wnxku.YbuGeT277M0W/YL7PQdV2QoNEkIz1DY1Tr7u	N48lhfGg5snSCQnr1UZrixUl0hRzvUtttMl2vtulA7LUhoMptvuMcXPc54Mo	2019-01-22 17:48:16.000	2019-01-22 17:48:16.000
 -
 
 
