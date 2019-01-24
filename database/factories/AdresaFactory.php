@@ -11,6 +11,6 @@ $factory->define(Adresa::class, function (Faker $faker) {
       'street' => $faker->streetAddress,
       'phone' => $faker->phoneNumber,
       'email' => $faker->email,
-      'trgovina_id'=> factory('App\Drzava')->create()->id
+      'trgovina_id'=> factory('App\Trgovina')->create()->id
     ];
 });
