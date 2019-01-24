@@ -15,6 +15,7 @@ class CreateAdresasTable extends Migration
     {
         Schema::create('adresas', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('trgovina_id')->unsigned()->nullable();
             $table->string('country');
             $table->string('city');
             $table->string('pbr');            
