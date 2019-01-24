@@ -141,5 +141,38 @@ $mobiteli=Trgovina::find(1)->mobiteli()->orderby('producer')->get();
 >>> $us->delete();
 => true
 
+//////////////////////////////////////
+// --------  Relacija preko mobitela i trgovine do adrese
+
+
+php artisan make:model Adresa -a
+
+adresa -> trgovina 47
+"22"	"47"	"Aruba"	"West Kelliefurt"	"48875"	"283 Breitenberg Causeway"	"+1-724-951-3959"	"langworth.larissa@kreiger.org"	"2019-01-24 18:18:58"	"2019-01-24 18:18:58"
+
+trgovina -> drzava 82
+"47"	"Moccasin"	"United States Minor Outlying Islands"	"82"	"2019-01-24 18:18:58"	"2019-01-24 18:18:58"
+
+trgovina -> mobitel 2,4,7 
+
+>>> $m=new Mobitel;
+>>> $m->find(2)->trgovine()->find(47)->adresa()->get();
+=> Illuminate\Database\Eloquent\Collection {#3050
+     all: [
+       App\Adresa {#3058
+         id: 22,
+         trgovina_id: 47,
+         country: "Aruba",
+         city: "West Kelliefurt",
+         pbr: "48875",
+         street: "283 Breitenberg Causeway",
+         phone: "+1-724-951-3959",
+         email: "langworth.larissa@kreiger.org",
+         created_at: "2019-01-24 18:18:58",
+         updated_at: "2019-01-24 18:18:58",
+       },
+     ],
+   }
+>>>
 
 

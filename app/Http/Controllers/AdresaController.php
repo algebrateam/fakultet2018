@@ -14,7 +14,7 @@ class AdresaController extends Controller
      */
     public function index()
     {
-        //
+        return 'hello from index'; 
     }
 
     /**
@@ -57,7 +57,8 @@ class AdresaController extends Controller
      */
     public function edit(Adresa $adresa)
     {
-        //
+//return 'hello';              
+     return view('adresa.edit', ['adresa' => $adresa]);
     }
 
     /**
