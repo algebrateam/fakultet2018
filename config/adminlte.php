@@ -113,6 +113,34 @@ return [
       ],
     ],
         [
+      'text' => 'Adrese',
+      'icon' => 'share',
+      'submenu' => [
+        [
+          'text' => 'Sve adrese',
+          'url' => 'adrese',
+          'icon' => 'file',
+          'label' => 14,
+          'label_color' => 'success',
+        ],
+        [
+          'text' => 'Nova adresa',
+          'url' => 'adrese/create',
+          'icon' => 'file',
+        ],
+                [
+          'text' => 'Adresa 1 detalji',
+          'url' => 'adrese/1',
+          'icon' => 'file',
+        ],
+                        [
+          'text' => 'Adresa 1 uredi',
+          'url' => 'adrese/1/edit',
+          'icon' => 'file',
+        ],
+      ],
+    ],
+        [
       'text' => 'Mobitel',
       'icon' => 'share',
       'submenu' => [
