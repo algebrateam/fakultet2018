@@ -46,15 +46,17 @@ class AdresaController extends Controller
      * @param  Adresa  $adresa
      * @return Response
      */
-    public function show(Adresa $adresa)
+    //public function show(Adresa $adresa)  // jednostavno nece
+    public function show($adresa_id)
     {
-       // http://localhost:8000/adrese/1
+     $adresa=Adresa::find($adresa_id);
+        // http://localhost:8000/adrese/1
        //return  $adresa->all(); 
        //return  $adresa->find(1); 
-        $adresa=Adresa::find($adresa->id);
-      dd($adresa);
+        //$adresa=Adresa::find($adresa->id);
+      //dd($adresa);
 
-        return view('adresa.show', ['adresa' => $adresa->find(1)]);
+        return view('adresa.show', ['adresa' => $adresa]);
     }
 
     /**

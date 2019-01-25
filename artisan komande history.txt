@@ -175,4 +175,75 @@ trgovina -> mobitel 2,4,7
    }
 >>>
 
+///////////////
+
+>>> $m->find(1)->trgovine()->has('adresa')->first()->adresa();
+=> Illuminate\Database\Eloquent\Relations\HasMany {#3187}
+>>> $m->find(1)->trgovine()->has('adresa')->first()->adresa()->get();
+=> Illuminate\Database\Eloquent\Collection {#3312
+     all: [
+       App\Adresa {#3296
+         id: 20,
+         trgovina_id: 45,
+         slika: "0",
+         country: "Portugal",
+         city: "West Lorinechester",
+         pbr: "03135-9478",
+         street: "74765 Emilie Roads Apt. 261",
+         phone: "1-394-415-1313 x36940",
+         email: "anabel.wiza@hotmail.com",
+         created_at: "2019-01-24 22:43:40",
+         updated_at: "2019-01-24 22:43:40",
+       },
+     ],
+   }
+>>> Trgovina::has('mobiteli')->first();
+[!] Aliasing 'Trgovina' to 'App\Trgovina' for this Tinker session.
+=> App\Trgovina {#3007
+     id: 1,
+     name: "Beige",
+     drzava: "Syrian Arab Republic",
+     drzava_id: 36,
+     created_at: "2019-01-24 22:43:39",
+     updated_at: "2019-01-24 22:43:39",
+   }
+
+///////////
+// NE RADI OVO DOLJE:
+>>> Trgovina::has('mobiteli')->first()->adresa();
+=> Illuminate\Database\Eloquent\Relations\HasMany {#3018}
+
+
+>>> Trgovina::has('mobiteli')->first()->adresa()->get();
+=> Illuminate\Database\Eloquent\Collection {#3026
+     all: [],
+   }
+
+>>> Trgovina::has('mobiteli')->first()->adresa()->all();
+BadMethodCallException with message 'Call to undefined method Illuminate/Database/Eloquent/Relations/HasMany::all()'
+
+
+// OVO DOLJE RADI
+>>> Mobitel::has('trgovine')->first()->trgovine()->has('adresa')->first()->adresa()->get();
+=> Illuminate\Database\Eloquent\Collection {#3276
+     all: [
+       App\Adresa {#3003
+         id: 20,
+         trgovina_id: 45,
+         slika: "0",
+         country: "Portugal",
+         city: "West Lorinechester",
+         pbr: "03135-9478",
+         street: "74765 Emilie Roads Apt. 261",
+         phone: "1-394-415-1313 x36940",
+         email: "anabel.wiza@hotmail.com",
+         created_at: "2019-01-24 22:43:40",
+         updated_at: "2019-01-24 22:43:40",
+       },
+     ],
+   }
+>>>
+
+
+
 

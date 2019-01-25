@@ -1,5 +1,6 @@
 <?php
 
+use App\Adresa;
 use App\Mobitel;
 use App\Trgovina;
 use Faker\Generator as Faker;
@@ -52,7 +53,8 @@ class MobitelTrgovinaPivotSeeder extends Seeder {
 
         //  ###    PREPORUČEN NAČIN  ###
         // 3. NAČIN: dohvatiti stvarne id iz Mobitel i Trgovina modela
-        foreach (Mobitel::all() as $value) {
+        //foreach (Mobitel::all() as $value) {
+        foreach (Adresa::all() as $value) { // za svaku adresu dodaj random par mobitel-trgovina
             DB::table('mobitel_trgovina')->insert(
                 [
                   'mobitel_id' => Mobitel::select('id')->orderByRaw("RAND()")->first()->id,

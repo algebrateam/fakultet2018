@@ -13,7 +13,7 @@ class Trgovina extends Model
     }
      public function drzava()
     {
-        return $this->belongsTo('App\Drzava'); // inverse relation
+        return $this->belongsTo('App\Drzava','drzava_id'); // inverse relation
     }  
     public function adresa() {
         return $this->hasMany('App\Adresa'); //1:n

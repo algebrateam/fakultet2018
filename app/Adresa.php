@@ -9,6 +9,6 @@ class Adresa extends Model
     protected $primaryKey = 'id'; // bespotrebno, po defaultu je vec 'id'
     public function trgovine()
     {
-        return $this->belongsTo('App\Trgovina');
+       return $this->belongsTo('App\Trgovina','trgovina_id','id'); // dodao 'trgovina_id' jer AdresaController@show() ne kreitra model       
     }    
 }

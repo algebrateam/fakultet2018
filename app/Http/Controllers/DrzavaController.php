@@ -45,8 +45,10 @@ class DrzavaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Drzava $drzava)
+    //public function show($id)
     {
-        //
+        //return view('drzava.show', ['drzava' => Drzava::find($id)]);
+        return view('drzava.show', ['drzava' => $drzava]);
     }
 
     /**

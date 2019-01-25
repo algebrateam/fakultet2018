@@ -9,6 +9,7 @@ class Drzava extends Model
 {
     public function trgovine()
     {
-        return $this->hasMany('App\Trgovina');
+        //return $this->hasMany('App\Trgovina','drzava_id','id');
+        return $this->hasMany('App\Trgovina');  //Ovo isto radi
     }
 }
