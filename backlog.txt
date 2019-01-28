@@ -30,12 +30,13 @@ https://dashboard.heroku.com/apps/fakultet2018
 - dodaj komponentu crud.blade.php kao http://localhost:8000/trgovine
 // - deployment na Heroku
 // - dodaj usera 1	Predrag Mrvic	pmrvic@123.com	""	$2y$10$InrA9CXO7Q5Wnxku.YbuGeT277M0W/YL7PQdV2QoNEkIz1DY1Tr7u	N48lhfGg5snSCQnr1UZrixUl0hRzvUtttMl2vtulA7LUhoMptvuMcXPc54Mo	2019-01-22 17:48:16.000	2019-01-22 17:48:16.000
-- upload slika
-- faker upload slika // ne radi : InvalidArgumentException  : Cannot write to directory "/public"
-- crud edit adresa
+// - upload slika
+// - faker upload slika // ne radi : InvalidArgumentException  : Cannot write to directory "/public"
+// - crud edit adresa
 - poslati ispite prije vikenda
 - pokazati eloquent upite where, find, get, all  https://laravel.com/docs/5.7/eloquent#mass-assignment
 - test eloquent
+- paging varijabli
 
 
 

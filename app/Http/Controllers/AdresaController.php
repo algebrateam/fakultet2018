@@ -18,7 +18,9 @@ class AdresaController extends Controller
      */
     public function index()
     {
-        return 'hello from index'; 
+         $adresa = Adresa::all();
+        return view('adresa.index', compact('adresa'));
+        //return view('adresa.index', ['adresa' => adresa]); // moze i ovako
     }
 
     /**
