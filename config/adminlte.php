@@ -118,24 +118,24 @@ return [
       'submenu' => [
         [
           'text' => 'Sve adrese',
-          'url' => 'adrese',
+          'url' => 'adresa',
           'icon' => 'file',
           'label' => 14,
           'label_color' => 'success',
         ],
         [
           'text' => 'Nova adresa',
-          'url' => 'adrese/create',
+          'url' => 'adresa/create',
           'icon' => 'file',
         ],
                 [
           'text' => 'Adresa 1 detalji',
-          'url' => 'adrese/1',
+          'url' => 'adresa/1',
           'icon' => 'file',
         ],
                         [
           'text' => 'Adresa 1 uredi',
-          'url' => 'adrese/1/edit',
+          'url' => 'adresa/1/edit',
           'icon' => 'file',
         ],
       ],

@@ -21,7 +21,7 @@ class AdresaTest extends TestCase
          
         
          // ovo isto radi ali u bazi mora biti adresa Bermuda
-         //$this->assertEquals("Bermuda", $a::find(1)->country, 'trazim adresu');
+         //$this->assertEquals("Botswana", $a::find(1)->country, 'trazim adresu');
          
          $this->assertEquals(1, $a::find(1)->id, 'usporedjujem dobiveni i zadani id');
         //$this->assertTrue(true);

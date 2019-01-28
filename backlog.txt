@@ -34,6 +34,8 @@ https://dashboard.heroku.com/apps/fakultet2018
 - faker upload slika // ne radi : InvalidArgumentException  : Cannot write to directory "/public"
 - crud edit adresa
 - poslati ispite prije vikenda
+- pokazati eloquent upite where, find, get, all  https://laravel.com/docs/5.7/eloquent#mass-assignment
+- test eloquent
 
 
 

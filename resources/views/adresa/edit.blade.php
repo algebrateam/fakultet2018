@@ -10,7 +10,7 @@
 <div class="alert alert-error">{{ Session::get('error') }}</div>
 @endif
 
-<form method="POST" action="/adrese/{{$adresa->id}}">
+<form method="POST" action="/adresa/{{$adresa->id}}" enctype="multipart/form-data">
     <input type="hidden" name="_method" value="PUT">
     @csrf
     <div class="form-group">
@@ -23,7 +23,7 @@
                value="{{ $adresa->trgovina_id }}"><br>
 
         <label for="slika"> slika:</label><br>
-        <input maxlength="191" type="text" name="slika"
+        <input maxlength="191" type="file" name="slika"
                value="{{ $adresa->slika }}"><br>
 
         <label for="country"> country:</label>

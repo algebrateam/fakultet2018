@@ -14,7 +14,12 @@
   
   //dd($adresa->all());
   ?>
-    {{ $adresa->country }}
+{{ $adresa->country }}<br>
+
+    
+    @if (!empty($adresa->slika))
+    <img src="/{{ $adresa->slika }}">
+@endif
    
 @endsection
 @section('css')

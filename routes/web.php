@@ -53,7 +53,7 @@ Route::resource('mobitels','MobitelController');
 Route::get('/mobitels/all', 'MobitelController@svi_mobiteli');
 Route::resource('trgovine','TrgovinaController');
 Route::resource('drzave','DrzavaController');
-Route::resource('adrese','AdresaController');
+Route::resource('adresa','AdresaController');
 
 Route::get('/trgovina/{trgovina_id}/mobiteli',function ($trgovina_id) {
     $mobovi = App\Trgovina::find($trgovina_id)->mobiteli()->orderby('producer')->get();

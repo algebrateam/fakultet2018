@@ -19,8 +19,10 @@ class TrgovinaController extends Controller {
      * @return Response
      */
     public function index() {
+        $t1=Trgovina::with('mobiteli')->count();  // 4.02ms Eager loading
+        $t2=Trgovina::has('mobiteli')->count();   // 930 us Lazy loading
         $trgovine = Trgovina::all();
-        return view('trgovina.index', ['trgovine' => $trgovine]);
+        return view('trgovina.index', ['trgovine' => $trgovine,'t1'=>$t1,'t2'=>$t2]);
         /*
         foreach ($trgovine as $t) {
             echo '<br><strong>' . $t->name . '</strong>';
