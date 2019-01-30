@@ -1,6 +1,7 @@
+[![StyleCI](https://github.styleci.io/repos/160552957/shield?branch=master)](https://github.styleci.io/repos/160552957)
 [![Build Status](https://travis-ci.org/algebrateam/fakultet2018.svg?branch=master)](https://travis-ci.org/algebrateam/fakultet2018)
 [![Heroku](https://github.com/algebrateam/phpdev2018/blob/master/heroku.svg)](https://dashboard.heroku.com/apps/fakultet2018)
-[![StyleCI](https://github.styleci.io/repos/160552957/shield?branch=master)](https://github.styleci.io/repos/160552957)
+
 
 # fakultet2018
 Projekt fakultet uz pomoć Laravel frameworka
