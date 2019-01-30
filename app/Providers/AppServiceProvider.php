@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Observers\TrgovinaObserver;
+use App\Trgovina;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -21,6 +23,13 @@ class AppServiceProvider extends ServiceProvider
          * 1071 Specified key was too long; max key length is 767 bytes")
          */
         Schema::defaultStringLength(191);
+        
+        /**
+         * Registriramo observer nad Modelom Trgovina
+         * Kada se dogodi update nad modelom, svojstvo drzava pretvori se u prvo
+         * veliko pocetno slovo (ucfirst())
+         */
+        Trgovina::observe(TrgovinaObserver::class);
     }
 
     /**

@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Drzava extends Model
 {
+    protected $fillable = [
+        'name', 'code'
+    ];
     public function trgovine()
     {
         //return $this->hasMany('App\Trgovina','drzava_id','id');

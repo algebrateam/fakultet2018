@@ -19,7 +19,7 @@
 	<div class="alert alert-warning">{{ Session::get('warning') }}</div>
 @endif
 <hr>
-<ol>
+<ol start="{{$adresa->firstItem()}}">
     <?php
     //dd($adresa);
     ?>
@@ -38,6 +38,7 @@
     
     @endforeach
 </ol>
+{{ $adresa->links() }}
 
 
 @endsection

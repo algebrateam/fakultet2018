@@ -33,10 +33,17 @@ https://dashboard.heroku.com/apps/fakultet2018
 // - upload slika
 // - faker upload slika // ne radi : InvalidArgumentException  : Cannot write to directory "/public"
 // - crud edit adresa
-- poslati ispite prije vikenda
-- pokazati eloquent upite where, find, get, all  https://laravel.com/docs/5.7/eloquent#mass-assignment
-- test eloquent
-- paging varijabli
+//- poslati ispite prije vikenda
+// - pokazati eloquent upite where, find, get, all  https://laravel.com/docs/5.7/eloquent#mass-assignment
+// - test eloquent
+// - paging varijabli
+//-  softdelete primjer : 
+    Trgovina::all()->where('name','Crimson');  // dohvati sve imenom Crimson
+    Trgovina::withTrashed()->where('name','Crimson')->get();  // dohvati sve obrisane Crimsone
+    Trgovina::onlyTrashed()->get();  // dohvati samo obrisane
+//- observer -> php artisan make:observer TrgovinaObserver --model=Trgovina
+
+
 
 
 

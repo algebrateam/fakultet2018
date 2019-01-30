@@ -19,6 +19,7 @@ class CreateTrgovinasTable extends Migration
             $table->string('drzava');
             $table->integer('drzava_id')->unsigned()->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
