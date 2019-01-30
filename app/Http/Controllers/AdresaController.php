@@ -18,7 +18,8 @@ class AdresaController extends Controller
      */
     public function index()
     {
-         $adresa = Adresa::all();
+        $adresa = Adresa::all();
+
         return view('adresa.index', compact('adresa'));
         //return view('adresa.index', ['adresa' => adresa]); // moze i ovako
     }
@@ -36,7 +37,8 @@ class AdresaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param Request $request
+     *
      * @return Response
      */
     public function store(Request $request)
@@ -47,22 +49,23 @@ class AdresaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Adresa  $adresa
+     * @param Adresa $adresa
+     *
      * @return Response
      */
     public function show(Adresa $adresa)  // jednostavno nece
-    // ovo smo morali jer je routa bila nazvana adrese umjesto adresa 
+    // ovo smo morali jer je routa bila nazvana adrese umjesto adresa
     // Route::resource('adrese','AdresaController');
     // Ispravno:
     // Route::resource('adresa','AdresaController');
-    //public function show($adresa_id)  
+    //public function show($adresa_id)
     {
-     //$adresa=Adresa::find($adresa_id);
+        //$adresa=Adresa::find($adresa_id);
         // http://localhost:8000/adrese/1
-       //return  $adresa->all(); 
-       //return  $adresa->find(1); 
+        //return  $adresa->all();
+        //return  $adresa->find(1);
         //$adresa=Adresa::find($adresa->id);
-      //dd($adresa);
+        //dd($adresa);
 
         return view('adresa.show', ['adresa' => $adresa]);
     }
@@ -70,32 +73,35 @@ class AdresaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Adresa  $adresa
+     * @param Adresa $adresa
+     *
      * @return Response
      */
     public function edit(Adresa $adresa)
     {
-     return view('adresa.edit', ['adresa' => $adresa]);
+        return view('adresa.edit', ['adresa' => $adresa]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
-     * @param  Adresa  $adresa
+     * @param Request $request
+     * @param Adresa  $adresa
+     *
      * @return Response
      */
     public function update(Request $request, Adresa $adresa)
     {
-$validator = Validator::make($request->all(), [
-              "trgovina_id" => "required|numeric",  
-              "country" => "required|string|max:191",
-              "city" => "required|string|max:191",
-              "pbr" => "required|string|max:191",
-              "street" => "required|string|max:191"  
+        $validator = Validator::make($request->all(), [
+              'trgovina_id' => 'required|numeric',
+              'country'     => 'required|string|max:191',
+              'city'        => 'required|string|max:191',
+              'pbr'         => 'required|string|max:191',
+              'street'      => 'required|string|max:191',
         ]);
         if ($validator->fails()) {
             Session::flash('error', 'Greška, molim ispravno popuniti polja!');
+
             return redirect('adresa/'.$trgovine->id.'/edit')
                     ->withErrors($validator)
                     ->withInput();
@@ -106,21 +112,21 @@ $validator = Validator::make($request->all(), [
             $adresa->city = $request->input('city');
             $adresa->pbr = $request->input('pbr');
             $adresa->phone = $request->input('phone');
-          
-// ako postoji slika uploadaj ju  
-            try{
+
+            // ako postoji slika uploadaj ju
+            try {
                 $imageExtension = $request->slika->getClientOriginalExtension();  // nastavak
-                $imageName='adresa-'.$adresa->id.'-'. now()->format('Y-m-d').'.'.$imageExtension; // ime slike
-                $adresa->slika=$imageName;  // ime slike u bazi
+                $imageName = 'adresa-'.$adresa->id.'-'.now()->format('Y-m-d').'.'.$imageExtension; // ime slike
+                $adresa->slika = $imageName;  // ime slike u bazi
                 $request->slika->move(public_path(), $imageName); // kopiraj u /public
+            } catch (Exception $e) {
+                dd($e);
             }
- catch (Exception $e){
-     dd($e);
- }
-            
+
             $adresa->save();
             // redirect
             Session::flash('message', 'Uspješno izmjenjena adresa!');
+
             return redirect()->route('adresa.index');
         }
     }
@@ -128,7 +134,8 @@ $validator = Validator::make($request->all(), [
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Adresa  $adresa
+     * @param Adresa $adresa
+     *
      * @return Response
      */
     public function destroy(Adresa $adresa)

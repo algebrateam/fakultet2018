@@ -14,6 +14,6 @@ class TrgovinaTableSeeder extends Seeder
     {
         //DB::table('trgovinas')->delete();  // moze "RAW" pristup ili preko modela ...
         Trgovina::truncate();  // brise sve prethodne podatke
-        factory(Trgovina::class,25)->create();
+        factory(Trgovina::class, 25)->create();
     }
 }

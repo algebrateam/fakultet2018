@@ -13,6 +13,6 @@ class AdresasTableSeeder extends Seeder
     public function run()
     {
         Adresa::truncate();  // brise sve prethodne podatke
-        factory(Adresa::class,100)->create();
+        factory(Adresa::class, 100)->create();
     }
 }

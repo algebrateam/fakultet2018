@@ -29,12 +29,9 @@ class DrugiKorisnikLoginTest extends DuskTestCase
                     ->clickLink('Log Out')
                     ->assertPathIs('/')
                     ->assertSee('na aplikaciju Fakultet');
-            
-            $korisnik=User::where('email','test@test.com') -> first()->delete();
-            //$korisnik->delete();
 
-            
+            $korisnik = User::where('email', 'test@test.com')->first()->delete();
+            //$korisnik->delete();
         });
-        
     }
 }
