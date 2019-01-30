@@ -1,7 +1,7 @@
 <?php
+
 // php artisan make:seeder DrzavasTableSeeder
 // php artisan db:seed --class=UsersTableSeeder
-
 
 use App\Drzava;
 use Illuminate\Database\Seeder;
@@ -16,6 +16,6 @@ class DrzavasTableSeeder extends Seeder
     public function run()
     {
         Drzava::truncate();  // brise sve prethodne podatke
-        factory(Drzava::class,35)->create();
+        factory(Drzava::class, 35)->create();
     }
 }

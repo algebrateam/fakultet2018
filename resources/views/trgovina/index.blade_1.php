@@ -1,4 +1,4 @@
-﻿@extends('master')
+@extends('master')
 
 @section('title', 'Sve trgovine')
 {{-- linkovi za mobitel --}}

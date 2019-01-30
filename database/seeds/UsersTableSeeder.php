@@ -12,22 +12,22 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        // "1"	
-        // "Predrag Mrvic"	
-        // "pmrvic@123.com"	
-        // \N	
-        // "$2y$10$InrA9CXO7Q5Wnxku.YbuGeT277M0W/YL7PQdV2QoNEkIz1DY1Tr7u"	
-        // "N48lhfGg5snSCQnr1UZrixUl0hRzvUtttMl2vtulA7LUhoMptvuMcXPc54Mo"	
-        // "2019-01-22 17:48:16"	
+        // "1"
+        // "Predrag Mrvic"
+        // "pmrvic@123.com"
+        // \N
+        // "$2y$10$InrA9CXO7Q5Wnxku.YbuGeT277M0W/YL7PQdV2QoNEkIz1DY1Tr7u"
+        // "N48lhfGg5snSCQnr1UZrixUl0hRzvUtttMl2vtulA7LUhoMptvuMcXPc54Mo"
+        // "2019-01-22 17:48:16"
         // "2019-01-22 17:48:16"
 
-        User::truncate(); 
-        $u1= new User();
-        $u1->name = "Predrag Mrvic";
-        $u1->email = "pmrvic@123.com";
-        $u1->email_verified_at = NULL;
+        User::truncate();
+        $u1 = new User();
+        $u1->name = 'Predrag Mrvic';
+        $u1->email = 'pmrvic@123.com';
+        $u1->email_verified_at = null;
         $u1->password = '$2y$10$InrA9CXO7Q5Wnxku.YbuGeT277M0W/YL7PQdV2QoNEkIz1DY1Tr7u';
-        $u1->remember_token = "N48lhfGg5snSCQnr1UZrixUl0hRzvUtttMl2vtulA7LUhoMptvuMcXPc54Mo";
+        $u1->remember_token = 'N48lhfGg5snSCQnr1UZrixUl0hRzvUtttMl2vtulA7LUhoMptvuMcXPc54Mo';
         $u1->save();
     }
 }

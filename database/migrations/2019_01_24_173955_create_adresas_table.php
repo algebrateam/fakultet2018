@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateAdresasTable extends Migration
 {
@@ -19,8 +19,8 @@ class CreateAdresasTable extends Migration
             $table->string('slika')->nullable();
             $table->string('country');
             $table->string('city');
-            $table->string('pbr');            
-            $table->string('street');            
+            $table->string('pbr');
+            $table->string('street');
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->timestamps();

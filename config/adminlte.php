@@ -12,8 +12,8 @@ return [
     |
    */
 
-  'title' => 'AdminLTE 2',
-  'title_prefix' => '',
+  'title'         => 'AdminLTE 2',
+  'title_prefix'  => '',
   'title_postfix' => '',
   /*
     |--------------------------------------------------------------------------
@@ -25,7 +25,7 @@ return [
     | variant, used for the mini side bar. Make it 3 letters or so
     |
    */
-  'logo' => '<b>Admin</b>LTE',
+  'logo'      => '<b>Admin</b>LTE',
   'logo_mini' => '<b>A</b>LT',
   /*
     |--------------------------------------------------------------------------
@@ -72,10 +72,10 @@ return [
     |
    */
   'dashboard_url' => 'home',
-  'logout_url' => 'logout',
+  'logout_url'    => 'logout',
   'logout_method' => null,
-  'login_url' => 'login',
-  'register_url' => 'register',
+  'login_url'     => 'login',
+  'register_url'  => 'register',
   /*
     |--------------------------------------------------------------------------
     | Menu Items
@@ -91,118 +91,118 @@ return [
     'MAIN NAVIGATION',
     [
       'text' => 'Blog',
-      'url' => 'admin/blog',
-      'can' => 'manage-blog',
+      'url'  => 'admin/blog',
+      'can'  => 'manage-blog',
     ],
     [
-      'text' => 'Trgovina',
-      'icon' => 'share',
+      'text'    => 'Trgovina',
+      'icon'    => 'share',
       'submenu' => [
         [
-          'text' => 'Sve trgovine',
-          'url' => 'trgovine',
-          'icon' => 'file',
-          'label' => 14,
+          'text'        => 'Sve trgovine',
+          'url'         => 'trgovine',
+          'icon'        => 'file',
+          'label'       => 14,
           'label_color' => 'success',
         ],
         [
           'text' => 'Nova trgovina',
-          'url' => 'trgovine/create',
+          'url'  => 'trgovine/create',
           'icon' => 'file',
         ],
       ],
     ],
         [
-      'text' => 'Adrese',
-      'icon' => 'share',
+      'text'    => 'Adrese',
+      'icon'    => 'share',
       'submenu' => [
         [
-          'text' => 'Sve adrese',
-          'url' => 'adresa',
-          'icon' => 'file',
-          'label' => 14,
+          'text'        => 'Sve adrese',
+          'url'         => 'adresa',
+          'icon'        => 'file',
+          'label'       => 14,
           'label_color' => 'success',
         ],
         [
           'text' => 'Nova adresa',
-          'url' => 'adresa/create',
+          'url'  => 'adresa/create',
           'icon' => 'file',
         ],
                 [
           'text' => 'Adresa 1 detalji',
-          'url' => 'adresa/1',
+          'url'  => 'adresa/1',
           'icon' => 'file',
         ],
                         [
           'text' => 'Adresa 1 uredi',
-          'url' => 'adresa/1/edit',
+          'url'  => 'adresa/1/edit',
           'icon' => 'file',
         ],
       ],
     ],
         [
-      'text' => 'Mobitel',
-      'icon' => 'share',
+      'text'    => 'Mobitel',
+      'icon'    => 'share',
       'submenu' => [
         [
-          'text' => 'Svi mobiteli',
-          'url' => 'mobitels',
-          'icon' => 'file',
-          'label' => 14,
+          'text'        => 'Svi mobiteli',
+          'url'         => 'mobitels',
+          'icon'        => 'file',
+          'label'       => 14,
           'label_color' => 'success',
         ],
         [
           'text' => 'Novi mobitel',
-          'url' => 'mobitels/create',
+          'url'  => 'mobitels/create',
           'icon' => 'file',
         ],
       ],
     ],
     [
-      'text' => 'Pages',
-      'url' => 'admin/pages',
-      'icon' => 'file',
-      'label' => 4,
+      'text'        => 'Pages',
+      'url'         => 'admin/pages',
+      'icon'        => 'file',
+      'label'       => 4,
       'label_color' => 'success',
     ],
     'ACCOUNT SETTINGS',
     [
       'text' => 'Profile',
-      'url' => 'admin/settings',
+      'url'  => 'admin/settings',
       'icon' => 'user',
     ],
     [
       'text' => 'Change Password',
-      'url' => 'admin/settings',
+      'url'  => 'admin/settings',
       'icon' => 'lock',
     ],
     [
-      'text' => 'Multilevel',
-      'icon' => 'share',
+      'text'    => 'Multilevel',
+      'icon'    => 'share',
       'submenu' => [
         [
           'text' => 'Level One',
-          'url' => '#',
+          'url'  => '#',
         ],
         [
-          'text' => 'Level One',
-          'url' => '#',
+          'text'    => 'Level One',
+          'url'     => '#',
           'submenu' => [
             [
               'text' => 'Level Two',
-              'url' => '#',
+              'url'  => '#',
             ],
             [
-              'text' => 'Level Two',
-              'url' => '#',
+              'text'    => 'Level Two',
+              'url'     => '#',
               'submenu' => [
                 [
                   'text' => 'Level Three',
-                  'url' => '#',
+                  'url'  => '#',
                 ],
                 [
                   'text' => 'Level Three',
-                  'url' => '#',
+                  'url'  => '#',
                 ],
               ],
             ],
@@ -210,21 +210,21 @@ return [
         ],
         [
           'text' => 'Level One',
-          'url' => '#',
+          'url'  => '#',
         ],
       ],
     ],
     'LABELS',
     [
-      'text' => 'Important',
+      'text'       => 'Important',
       'icon_color' => 'red',
     ],
     [
-      'text' => 'Warning',
+      'text'       => 'Warning',
       'icon_color' => 'yellow',
     ],
     [
-      'text' => 'Information',
+      'text'       => 'Information',
       'icon_color' => 'aqua',
     ],
   ],
@@ -258,7 +258,7 @@ return [
    */
   'plugins' => [
     'datatables' => true,
-    'select2' => true,
-    'chartjs' => true,
+    'select2'    => true,
+    'chartjs'    => true,
   ],
 ];

@@ -30,7 +30,8 @@ class DrzavaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +42,8 @@ class DrzavaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Drzava  $drzava
+     * @param Drzava $drzava
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Drzava $drzava)
@@ -54,7 +56,8 @@ class DrzavaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Drzava  $drzava
+     * @param Drzava $drzava
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Drzava $drzava)
@@ -65,8 +68,9 @@ class DrzavaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  Drzava  $drzava
+     * @param \Illuminate\Http\Request $request
+     * @param Drzava                   $drzava
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Drzava $drzava)
@@ -77,7 +81,8 @@ class DrzavaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Drzava  $drzava
+     * @param Drzava $drzava
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Drzava $drzava)
