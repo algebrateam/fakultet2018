@@ -15,7 +15,7 @@ before_script:
   - mysql -e 'create database fakultet2018;'
   - composer self-update
   - composer update
-  - composer require --dev phpunit/phpunit ^7.0
+  - composer require --dev phpunit/phpunit ^8.0
   #- composer install --no-interaction
   - php artisan migrate
   - php artisan db:seed
